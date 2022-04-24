@@ -14,9 +14,11 @@ Create Dockerfile in local folder directory
 # In this Dockerfile:
 COPY . /usr/share/nginx/html
 # In this way the local content can be taken and moved to the directory of the container
+# As a side note, a file/folder can be copied from Docker container to local folder directory once container (e.g. test_automation) is running by
+...\Automation_NGINX>docker cp test_automation:/usr/share/nginx/html .
 
 # Build image
-...\NGINX>docker build -t testauto:v1 .
+...\Automation_NGINX>docker build -t testauto:v1 .
 
 # Run container
 ...\NGINX>docker run -d -p 80:80 testauto:v1
