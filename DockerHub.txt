@@ -1,0 +1,19 @@
+...\Test_Docker>docker login
+Create repository 'test_docker_image_repo' at hub.docker.com
+# 'latest' is the tag of the image
+...\Test_Docker>docker tag test_docker_image:latest <dockerusername>/test_docker_image_repo:test_docker_image_repo_tag
+...\Test_Docker>docker push <dockerusername>/test_docker_image_repo:test_docker_image_repo_tag
+
+# Public view
+https://hub.docker.com/r/<dockerusername>/test_docker_image_repo/
+
+# Pull image
+...\Test_Docker>docker pull <dockerusername>/test_docker_image_repo:test_docker_image_repo_tag
+# Build container, pull executed automatically if not executed previously
+...\Test_Docker>docker run <dockerusername>/test_docker_image_repo:test_docker_image_repo_tag
+
+
+# Pull image, another example
+...\Test_Docker>docker pull couchbase
+# Build container
+...\Test_Docker>docker run couchbase:latest

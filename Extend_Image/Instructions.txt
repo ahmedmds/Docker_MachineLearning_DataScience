@@ -1,0 +1,4 @@
+Pull existing image
+Create Dockerfile with first RUN command referring to existing image and the extension of pip install NLTK
+# Go to the directory of new Dockerfile and build an image
+...\Extend_Image>docker build -t test_docker_image_extension:test_docker_image_extension_tag .

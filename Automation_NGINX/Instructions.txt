@@ -1,0 +1,29 @@
+# --rm tells Docker daemon to clean up the container and remove it from file system once container is stopped, minimizes computational resources
+# nginx is the image, pulled from library/nginx if not available locally
+# This command starts the container
+...\NGINX>docker run -it --rm -d -p 8080:8080 --name test_automation nginx
+
+# To go to interactive mode of running container
+Use Docker dashboard UI
+# html folder containing index.html located in
+/usr/share/nginx/html
+
+Create index.html file in local folder directory
+
+Create Dockerfile in local folder directory
+# In this Dockerfile:
+COPY . /usr/share/nginx/html
+# In this way the local content can be taken and moved to the directory of the container
+
+# Build image
+...\NGINX>docker build -t testauto:v1 .
+
+# Run container
+...\NGINX>docker run -d -p 80:80 testauto:v1
+
+# Check deployment of newly created index.html
+http://localhost:80/
+
+# However, the test_automation container of nginx image will have original index.html of nginx
+http://localhost:8080/
+

@@ -1,0 +1,29 @@
+# Create volume
+...\Volume>docker volume create test_docker_volume
+
+# List volumes
+...\Volume>docker volume list
+
+# Inspect volume
+...\Volume>docker volume inspect test_docker_volume
+
+# Build and run a simple container, '-it' enables working in interactive mode
+...\Volume>docker run -it --name=test_docker_volume_1 --mount source=test_docker_volume,destination=/test_docker_volume alpine
+# Interactive mode
+/ # ls
+/ # cd test_docker_volume/
+/test_docker_volume # touch examplevolumetest.txt
+# New terminal, run a new container
+...\Volume>docker run -it --name=test_docker_volume_2 --mount source=test_docker_volume,destination=/test_docker_volume alpine
+# Interactive mode
+/ # ls
+/ # cd test_docker_volume/
+# List directory, it would contain the file examplevolumetest.txt
+/ # ls
+
+# Stop and delete containers
+...\Volume>docker stop test_docker_volume_1 test_docker_volume_2
+...\Volume>docker rm test_docker_volume_1 test_docker_volume_2
+
+# Deleting volume, only after deleting containers
+...\Volume>docker volume rm test_docker_volume
