@@ -27,3 +27,6 @@ http://localhost:80/
 # However, the test_automation container of nginx image will have original index.html of nginx
 http://localhost:8080/
 
+Create new repo 'testingauto' in DockerHub and push image to repository
+
+# Linking of DockerHub repo with GitHub not done as don't have PRO account
