@@ -1,0 +1,7 @@
+# "up" combines build and run together
+...\Docker_Compose>docker-compose up
+# With this the access to Juypter Notebook work environment is given
+# The Docker dashboard would show the compose of multi-containers running
+
+# See example for more rigorous multi-containers service
+https://docs.docker.com/compose/compose-file/compose-file-v3/

@@ -1,0 +1,10 @@
+# "Swarm" seen as inactive
+...\Docker_Swarm\example-voting-app-master>docker info
+# To activate Swarm
+...\Docker_Swarm\example-voting-app-master>docker swarm init
+# To deploy from stack file, 'vote' is the name of the app, it is comprised of different services
+...\Docker_Swarm\example-voting-app-master>docker stack deploy --compose-file docker-stack.yml vote
+# To see information
+...\Docker_Swarm\example-voting-app-master>docker stack services vote
+# To remove app 'vote'
+...\Docker_Swarm\example-voting-app-master>docker stack rm vote

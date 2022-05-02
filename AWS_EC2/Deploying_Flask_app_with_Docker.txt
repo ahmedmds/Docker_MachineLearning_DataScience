@@ -1,0 +1,29 @@
+# Sample app deployed
+"Test_Docker"
+
+# Detailed resources for installation and Streamlit app deployment (also applies here for going into AWS EC2 instance here) instructions:
+https://medium.com/swlh/showcase-you-streamlit-web-app-to-the-world-with-aws-ec2-db603c69aa28
+https://towardsdatascience.com/how-to-deploy-a-streamlit-app-using-an-amazon-free-ec2-instance-416a41f69dc3
+https://gist.github.com/jaskiratr/cfacb332bfdff2f63f535db7efb6df93
+
+# Place .pem file in any AWS keys folder 
+.pem downloaded when Keypair instance is created
+
+# Get docker pull command for image and tag from DockerHub
+docker pull <dockerusername>/<dockerimagerepo>:<dockerimagetag>
+
+# Additional notes,
+# Within AWS Linux instance (accessed using Windows CMD)
+$ sudo yum update
+$ sudo yum install docker
+# Start docker service
+$ sudo service docker start
+# Pull image
+$ sudo docker pull <dockerusername>/<dockerimagerepo>:<dockerimagetag>
+# Run image
+$ sudo docker run --name AWSFlaskAppTest -p 5000:5000 <dockerusername>/<dockerimagerepo>:<dockerimagetag>
+# Up and running! Accessible publicly in browser via:
+http://<Public_IPv4_address>:5000/
+
+# As an alternative to using CMD to connect from AWS to ssh, use EC2 Instance Connect from browser
+# Go to EC2 instances dashboard and click on the instance and then click Connect!

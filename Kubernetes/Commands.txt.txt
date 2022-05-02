@@ -1,0 +1,22 @@
+# Tutorial: https://minikube.sigs.k8s.io/docs/start/
+# After installation, in CLI:
+>minikube start
+# Use kubetcl to access the kube cluster
+>kubectl get po -A
+# Minikube dashboard
+>minikube dashboard
+# Following section 4 in tutorial link to create and expose a sample application "hello-minikube", in CLI:
+>kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
+>kubectl expose deployment hello-minikube --type=NodePort --port=8080
+# Get info:
+>kubectl get services hello-minikube
+# Access the service:
+>minikube service hello-minikube
+# Delete deployment under "Deployments" in dashboard, or in CLI
+>kubectl delete -n default deployment hello-minikube
+# Delete service under "Services" dashboard, or in CLI
+>kubectl delete -n default service hello-minikube
+# Stop minikube container
+>minikube stop
+# Delete container, cluster and profiles
+>minikube delete --all
